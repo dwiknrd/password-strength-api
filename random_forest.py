@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import warnings
+import pickle
 warnings.filterwarnings('ignore')
 
 #read the document
@@ -60,8 +61,19 @@ cm = confusion_matrix(y_test,y_pred)
 print(cm)
 print(accuracy_score(y_test,y_pred))
 
+# predict_data = np.array(['123@#ghhgj'])
+# prediction = vectorizer.transform(predict_data)
+# print(clf.predict(prediction))
+
 # accuracy= 
 # [[16717  1241     7]
 #  [  482 98769   193]
 #  [   17   726 15776]]
 # 0.9800937817334687
+
+#save the model
+filename='model_password_strength.sav'
+pickle.dump(clf, open(filename, 'wb'))
+
+filename2='vectorizer_password_strength.sav'
+pickle.dump(vectorizer, open(filename2, 'wb'))
