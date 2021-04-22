@@ -15,7 +15,6 @@ def word_split(inputs):
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-# vectorizer = TfidfVectorizer(tokenizer=word_split)
 loaded_vectorizer = pickle.load(open('vectorizer_password_strength.sav', 'rb'))
 
 predict_data = np.array(['12345678'])
