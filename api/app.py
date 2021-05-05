@@ -21,9 +21,9 @@ def word_split(inputs):
 def index():
     if request.method == 'POST':
         print(request.form['password'])
-        loaded_model = pickle.load(open('model_password_strength.sav', 'rb'))
+        loaded_model = pickle.load(open('model_password_strength_2.sav', 'rb'))
 
-        loaded_vectorizer = pickle.load(open('vectorizer_password_strength.sav', 'rb'))
+        loaded_vectorizer = pickle.load(open('vectorizer_password_strength_2.sav', 'rb'))
         predict_data = np.array([request.form['password']])
         prediction = loaded_vectorizer.transform(predict_data)
 
